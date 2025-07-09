@@ -189,7 +189,9 @@ export default function Home() {
       {/* Skills & Technologies Section */}
       <section className="py-20 px-4" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-12">Skills & Technologies</h2>
-        <p className="text-center md:text-lg max-w-3xl mx-auto mb-12 text-base-content opacity-90 ">Through my journey as web developer, i've experience a vast range of skills. Here's a comprehensive overview of my technical skills.</p>
+        <p className="text-center md:text-lg max-w-3xl mx-auto mb-12 text-base-content opacity-90">
+          {`Through my journey as web developer, I've experienced a vast range of skills. Here's a comprehensive overview of my technical skills.`}
+        </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {[
             {
