@@ -5,7 +5,7 @@ export default function Footer() {
         <p>© 2025 Jundrel Alonzo - All Rights Reserved</p>
         <div className="grid grid-flow-col gap-4">
           <a href="https://github.com/jundrel" className="link link-hover">GitHub</a>
-          <a href="https://linkedin.com/in/jundrel" className="link link-hover">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/jundrel-alonzo-40040536a/" className="link link-hover">LinkedIn</a>
         </div>
       </div>
     </footer>

@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
 
-import Image from "next/image";
-import Link from "next/link";
+
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import { image } from "framer-motion/client";
-import { Teachers } from "next/font/google";
+import Image from "next/image";
+
 
 export default function Home() {
   useEffect(() => {
@@ -23,30 +20,33 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-base-200 text-base-content">
 
-      <Navbar />
-
       {/* Hero Section with Parallax */}
       <section
-        className="hero min-h-screen bg-fixed bg-cover bg-center"
+        className="hero min-h-screen bg-fixed bg-cover bg-center sm:bg-auto"
         style={{ backgroundImage: "url('/images/background.jpg')" }}
         data-aos="fade-up"
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero bg-base-200 bg-opacity min-h-screen flex items-center justify-center">
-          <div className="hero-content flex-col lg:flex-row-reverse max-w-6xl mx-auto">
-            <img
+          <div className="hero-content flex-col lg:flex-row-reverse max-w-6xl mx-auto w-full p-4">
+            <Image
+              width={500}
+              height={500}
               src="/images/jundrel.png"
-              className="max-w-lg rounded-lg object-fit"
+              className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-lg object-cover"
               alt="Jundrel Alonzo"
             />
-            <div className="max-w-lg">
-      
-              <h1 className="text-7xl font-bold"><span className="text-primary">Jundrel Alonzo</span></h1>
-              <h2 className="text-3xl font-semibold mt-4">FULL STACK DEVELOPER</h2>
-              <p className="py-6 text-justify">
+            <div className="max-w-lg text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+                <span className="text-primary">Jundrel Alonzo</span>
+              </h1>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mt-2">
+                FULL STACK DEVELOPER
+              </h2>
+              <p className="py-4 text-sm sm:text-base md:text-lg text-justify">
                 A passionate Web Developer skilled in crafting dynamic and responsive applications. I specialize in front-end, back-end, and mobile app development, bringing ideas to life with clean code and modern technologies.
               </p>
-              <button className="btn btn-primary">Get in touch</button>
+              <button className="btn btn-primary btn-wide sm:btn-lg">Get in touch</button>
             </div>
           </div>
         </div>
@@ -148,9 +148,11 @@ export default function Home() {
               data-aos-delay={index * 100}
             >
               <figure className="w-full lg:w-3/3">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  width={500}
+                  height={500}
                   className="w-full h-48 object-cover rounded-lg transition-transform opacity-50 duration-300 ease-in-out hover:scale-105"
                   style={{ objectFit: "cover" }}
                 />
@@ -187,6 +189,7 @@ export default function Home() {
       {/* Skills & Technologies Section */}
       <section className="py-20 px-4" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-12">Skills & Technologies</h2>
+        <p className="text-center md:text-lg max-w-3xl mx-auto mb-12 text-base-content opacity-90 ">Through my journey as web developer, i've experience a vast range of skills. Here's a comprehensive overview of my technical skills.</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {[
             {
@@ -270,8 +273,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
