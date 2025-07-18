@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 
-
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -70,7 +69,7 @@ export default function Home() {
                 </svg>
               `,
               title: "Frontend Development",
-              desc: "I build engaging and responsive user interfaces with Angular and Tailwind CSS. I focus on performance, accessibility, and visual appeal, with hands-on experience in projects like Renthings and JuanBayan.",
+              desc: "I build engaging and responsive user interfaces. I focus on performance, accessibility, and visual appeal, with hands-on experience in projects like Renthings and JuanBayan.",
             },
             {
               icon: `
@@ -79,7 +78,7 @@ export default function Home() {
                 </svg>
               `,
               title: "Backend Development",
-              desc: "I design and maintain server-side logic using Node.js, Firebase, creating RESTful APIs and managing database interactions with MySQL.",
+              desc: "I design and maintain server-side logic, creating RESTful APIs and managing database interactions with MySQL.",
             },
             {
               icon: `
@@ -118,7 +117,7 @@ export default function Home() {
 
       {/* Featured Projects Section */}
       <section className="py-20 px-4 bg-base-300" data-aos="fade-up">
-        <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+        <h2 className="text-4xl font-bold text-center mb-12">Featured <span className="text-primary">Projects</span></h2>
         <p className="text-center md:text-lg max-w-3xl mx-auto mb-12 text-base-content opacity-90">
           Here are some of my recent projects that showcase my skills in web and mobile development. Each project highlights my ability to create responsive, user-friendly applications using modern technologies.
         </p>
@@ -160,7 +159,7 @@ export default function Home() {
               <div className="card-body">
                 <h3 className="card-title">{project.title}</h3>
                 <div className="card-actions mb-4">
-                  <span className="text-bold"><strong>Technology stacks:</strong></span>
+                  <span className="text-bold"><strong>Technologies:</strong></span>
                   {project.techStack && (
                     <div className="flex flex-wrap gap-2 mt-2">
                       {project.techStack.map((tech, techIndex) => (
@@ -185,6 +184,46 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Experience Section */}
+      <section className="py-20 px-4 bg-base-300" data-aos="fade-up">
+        <h2 className="text-4xl font-bold text-center mb-12">Featured <span className="text-primary">Experience</span></h2>
+        <p className="text-center md:text-lg max-w-3xl mx-auto mb-12 text-base-content opacity-90" dat-aos="slide-top">
+          {`I have a diverse background in web development, with experience in both front-end and back-end technologies. My journey has equipped me with the skills to tackle complex projects and deliver high-quality solutions.`}
+        </p>
+        <div className="grid grid-rows-1 gap-6 max-w-6xl mx-auto">
+          {[
+            {
+              title: "Junior Web Developer",
+              company: "Itech-Rar Solutions Inc",
+              duration: "Jan 2025 - May 2025",
+              technologies: ["PHP", "LARAVEL", "Tailwind CSS", "MySQL", "Ajax", "JavaScript", "jQuery", "Google Workspace"],
+              description: "Contributed to maintaining and enhancing a web based Learning Management Systems and Online School CRMs, and Enrollment System, focusing both front-end and back-end. Collaborated with a team to implement new features and improve user experience such as Virtual Classrooms.",
+            },
+          ].map((experience, index) => (
+            <div
+              key={index}
+              className="col-span-12 md:col-span-6 lg:col-span-4 bg-base-200 shadow-md hover:shadow-lg hover:border-primary hover:shadow-primary/30 transition-all duration-300 ease-in-out rounded-lg p-6"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <h3 className="text-xl font-semibold mb-2">{experience.title}</h3>
+              <p className="text-sm text-gray-500 mb-1">{experience.company}</p>
+              <p className="text-sm text-gray-400 mb-4">{experience.duration}</p>
+              
+              <p className="text-base text-base-content/80">{experience.description}</p>
+              <div className="flex flex-wrap justify-start gap-2 mt-2">
+                  {experience.technologies.map((item, itemIndex) => (
+                    <span key={itemIndex} className="badge badge-primary">
+                      {item}
+                    </span>
+                  ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+        
 
       {/* Skills & Technologies Section */}
       <section className="py-20 px-4" data-aos="fade-up">
